@@ -21,4 +21,6 @@
 // Usecases and JEE concurrency APIs
 - Usecase: List of bank accounts and Xactions against those bank accounts. Generate a report for all the 
           Xactions per bank account. 
-- Using: ManagedExecutorService 
+  - Using: ManagedExecutorService ![managedexecutorservice.png](src%2Fmain%2Fresources%2Fmanagedexecutorservice.png)
+- Usecase: Health check for an application. Scheduled health checks.
+  - Using: ManagedScheduledExecutorService![managedscheduledexecutorservice.png](src%2Fmain%2Fresources%2Fmanagedscheduledexecutorservice.png)
