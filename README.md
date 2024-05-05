@@ -15,3 +15,10 @@
   This Xaction API has specifications to perform transactions over a distributed network. The parties involved in the Xaction processing will be 
   the resource manager, the application server and the application core. So JPA is going to specify the interface between
   the Xaction manager and all of these parties, gives you a way to do Xaction processing. 
+
+
+
+// Usecases and JEE concurrency APIs
+- Usecase: List of bank accounts and Xactions against those bank accounts. Generate a report for all the 
+          Xactions per bank account. 
+- Using: ManagedExecutorService 
