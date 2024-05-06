@@ -24,3 +24,19 @@
   - Using: ManagedExecutorService ![managedexecutorservice.png](src%2Fmain%2Fresources%2Fmanagedexecutorservice.png)
 - Usecase: Health check for an application. Scheduled health checks.
   - Using: ManagedScheduledExecutorService![managedscheduledexecutorservice.png](src%2Fmain%2Fresources%2Fmanagedscheduledexecutorservice.png)
+- ManagedThreadFactory & ThreadPoolExecutor - custom thread factory implemenation.
+- ContextService API
+  - contextual objects: Java object which has a particular application component's container context associated with it.
+  - contextual tasks: tasks submitted to managed resource. When a task instance is submitted to managed instance of executor service then the 
+    tasks becomes a contextual task. When the contextual task runs, the task behaves as if it was still running inside a container it was submitted with. 
+    When you have a application component like EJB, a servlet. Then we know that the thread that is running is going to have the contextual information 
+    associated with it. 
+  - ContextService API allows applications to create contextual objects without a managed executor. To understand it, if we create a thread 
+    using Java SE platform inside the enterprise environment we know that the contextual information is not guaranteed to be given to the thread.
+    Because the container is not aware of the thread created using the Java SE. If you want to capture the container context, and run with that context
+    may be on another instance of the server or restart. Then the ContextService API is the way to do it. 
+  - Basically it gives the context information to store it and run it later.
+  - How? Uses the dynamic proxies capabilities to associate an application's container context with an object instance.
+    This object now becomes a contextual object and whenever a method on the contextual object runs, then the method executes with the thread context of that 
+    associated application component instance.
+  - Used in advanced scenarios
